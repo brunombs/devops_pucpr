@@ -3,6 +3,7 @@
 
 # Ignorar a pasta de configuração do JetBrains (IDE como o IntelliJ, PyCharm, etc)
 .idea/
+*.iml
 
 # Ignorar arquivos de backup de editores
 *~
@@ -10,3 +11,12 @@
 
 # Ignorar outros arquivos temporários de IDE ou editor
 .vscode/
+
+# Arquivos compilados do Java
+*.class
+*.jar
+*.war
+
+# Pastas de build
+target/
+build/
