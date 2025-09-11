@@ -1,0 +1,12 @@
+# Ignorar arquivos do macOS
+.DS_Store
+
+# Ignorar a pasta de configuração do JetBrains (IDE como o IntelliJ, PyCharm, etc)
+.idea/
+
+# Ignorar arquivos de backup de editores
+*~
+*.swp
+
+# Ignorar outros arquivos temporários de IDE ou editor
+.vscode/
