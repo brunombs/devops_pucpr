@@ -11,6 +11,8 @@ public class Main {
         System.out.printf("Digite o segundo numero : ");
         int num2 = scanner.nextInt();
         int resultado = calculadora.somar(num1, num2);
-        System.out.printf("O resultado da soma é: " + resultado);
+        int resultadoSubtracao = calculadora.subtrair(num1, num2);
+        System.out.println("O resultado da soma é: " + resultado);
+        System.out.printf("O resultado da subtração é: " + resultadoSubtracao);
     }
 }
