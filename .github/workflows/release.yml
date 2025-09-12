@@ -25,7 +25,7 @@ jobs:
         run: javac -d target/classes src/main/java/com/calculator/*.java
 
       - name: Colocar em JAR
-        run: jar cfe calculadora.jar -C target/classes/ com.calculator.Main com
+        run: jar cfe calculadora.jar com.calculator.Main -C target/classes .
 
       - name: Upload JAR
         uses: actions/upload-artifact@v4
