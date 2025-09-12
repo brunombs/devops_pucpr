@@ -1,7 +1,5 @@
-name: Lint - Continuous Integration
+name: Checkout - Continuous Integration
 on:
-  push:
-    branches: [ "main" ]
   pull_request:
     branches:
       - main
@@ -10,18 +8,15 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-
-    permissions:
-      contents: read
-      packages: read
-      statuses: write
-
     steps:
       - name: Checkout code
         uses: actions/checkout@v5
         with:
           fetch-depth: 0
-      - name: Super-linter
-        uses: super-linter/super-linter@v8.1.0
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Setup Java JDK
+        uses: actions/setup-java@v5.0.0
+        with:
+          java-version: '21'
+          distribution: ''
+      - name: Run compilation test
+        run: javac *.java
