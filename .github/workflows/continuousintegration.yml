@@ -17,6 +17,6 @@ jobs:
         uses: actions/setup-java@v5.0.0
         with:
           java-version: '21'
-          distribution: ''
+          distribution: 'jetbrains'
       - name: Run compilation test
         run: javac *.java
