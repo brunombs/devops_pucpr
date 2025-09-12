@@ -19,4 +19,4 @@ jobs:
           java-version: '21'
           distribution: 'jetbrains'
       - name: Run compilation test
-        run: javac *.java
+        run: javac $(find . -name "*.java")
