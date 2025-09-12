@@ -1,0 +1,54 @@
+name: CI/CD
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    name: CI
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+
+      - name: Setup Java JDK
+        uses: actions/setup-java@v5.0.0
+        with:
+          java-version: '21'
+          distribution: 'jetbrains'
+
+      - name: Compilar
+        run: javac -d target/classes src/main/java/com/calculator/*.java
+
+      - name: Colocar em JAR
+        run: jar cfe calculadora.jar -C target/classes/ com.calculator.Main com
+
+      - name: Upload JAR
+        uses: actions/upload-artifact@v4
+        with:
+          name: calculadora-jar
+          path: calculadora.jar
+
+  release:
+    name: (CD)
+    runs-on: ubuntu-latest
+    needs: build
+
+    steps:
+      - name: Download  JAR
+        uses: actions/download-artifact@v5
+        with:
+          name: calculadora-jar
+
+      - name: Criar e anexar JAR
+        uses: softprops/action-gh-release@v1
+        with:
+          files: calculadora.jar
+          tag_name: v${{ github.run_number }}
+          name: Release ${{ github.run_number }}
+          body: "Nova versão da calculadora gerada automaticamente pelo workflow de CI/CD."
+          generate_release_notes: true
