@@ -1,0 +1,22 @@
+name: Checkout - Continuous Delivery
+on:
+  push:
+    branches:
+      - main
+      - ci
+      - cd
+
+jobs:
+  deliver:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v5
+
+      - name: Simulando Continuous Delivery
+        uses: actions/upload-artifact@v4
+        with:
+          name: arquivoTeste.zip
+          path: |
+            '**/*.java'
+            README.md
