@@ -14,7 +14,7 @@ jobs:
       - name: Simulando Continuous Delivery
         uses: actions/upload-artifact@v4
         with:
-          name: arquivoTeste.zip
+          name: arquivoTeste
           path: |
             **/*.java
             README.md
@@ -25,6 +25,6 @@ jobs:
     steps:
         - uses: actions/download-artifact@v5
           with:
-            name: arquivoTeste.zip
+            name: arquivoTeste
         - name: Display structure of downloaded files
           run: ls -R
