@@ -59,9 +59,20 @@ jobs:
           body: "Nova versão da calculadora gerada automaticamente pelo workflow de CI/CD."
           generate_release_notes: true
 
-      - name: Discord notification
-        env:
-          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
-        uses: Ilshidur/action-discord@master
-        with:
-          args: 'The project {{ EVENT_PAYLOAD.repository.full_name }} has been deployed.'
+#      - name: Discord notification
+#        env:
+#          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+#        uses: Ilshidur/action-discord@master
+#        with:
+#          args: 'The project {{ EVENT_PAYLOAD.repository.full_name }} has been deployed.'
+
+    discord:
+      runs-on: ubuntu-latest
+      needs: release
+      steps:
+        - name: Discord notification
+          env:
+            DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+          uses: Ilshidur/action-discord@master
+          with:
+            args: 'The project {{ EVENT_PAYLOAD.repository.full_name }} has been deployed. 🚀'
