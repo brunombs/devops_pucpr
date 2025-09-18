@@ -7,11 +7,11 @@ import static org.junit.jupiter.api.Assertions.*;
 class CalculadoraTest {
 
     @Test
-    @DisplayName("Deve somar 5 e 3 resultando em 8")
+    @DisplayName("Deve somar 18 e 24 resultando em 42")
     void deveSomarDoisNumerosCorretamente() {
         Calculadora calc = new Calculadora();
-        int resultado = calc.somar(5, 3);
-        assertEquals(8, resultado);
+        int resultado = calc.somar(18, 24);
+        assertEquals(42, resultado);
     }
 
     @Test
