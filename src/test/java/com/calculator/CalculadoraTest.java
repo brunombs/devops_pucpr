@@ -39,4 +39,14 @@ class CalculadoraTest {
 
         assertEquals(5, resultado);
     }
+
+    @Test
+    @DisplayName("Teste de falha: Deve somar 2 e 2 e esperar 5")
+    void deveFalharAoSubtrairIncorretamente() {
+        Calculadora calc = new Calculadora();
+
+        int resultado = calc.somar(2, 2);
+
+        assertEquals(5, resultado);
+    }
 }
