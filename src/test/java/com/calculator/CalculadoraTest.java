@@ -49,4 +49,14 @@ class CalculadoraTest {
 
         assertEquals(5, resultado);
     }
+
+    @Test
+    @DisplayName("Teste para dar resultado errado, mas não falhar")
+    void naoDeveFalhar() {
+        Calculadora calc = new Calculadora();
+
+        int resultado = calc.somar(2, 2);
+
+        assertNotEquals(5, resultado);
+    }
 }
