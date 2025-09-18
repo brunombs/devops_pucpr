@@ -25,6 +25,9 @@ jobs:
           distribution: 'jetbrains'
           cache: maven
 
+      - name: Run tests with Maven
+        run: mvn -B test
+
       - name: Compilar
         run: javac -d target/classes src/main/java/com/calculator/*.java
 
