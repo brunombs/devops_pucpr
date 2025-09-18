@@ -67,6 +67,7 @@ jobs:
 #          args: 'The project {{ EVENT_PAYLOAD.repository.full_name }} has been deployed.'
 
   discord:
+    permissions: {}
     runs-on: ubuntu-latest
     needs: release
     steps:
