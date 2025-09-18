@@ -23,6 +23,7 @@ jobs:
         with:
           java-version: '21'
           distribution: 'jetbrains'
+          cache: maven
 
       - name: Compilar
         run: javac -d target/classes src/main/java/com/calculator/*.java
