@@ -30,25 +30,25 @@ class CalculadoraTest {
         assertEquals(-5, resultado);
     }
 
-    @Test
-    @DisplayName("Teste de falha: Deve somar 2 e 2 e esperar 5")
-    void deveFalharAoSomarIncorretamente() {
-        Calculadora calc = new Calculadora();
+//    @Test
+//    @DisplayName("Teste de falha: Deve somar 2 e 2 e esperar 5")
+//    void deveFalharAoSomarIncorretamente() {
+//        Calculadora calc = new Calculadora();
+//
+//        int resultado = calc.somar(2, 2);
+//
+//        assertEquals(5, resultado);
+//    }
 
-        int resultado = calc.somar(2, 2);
-
-        assertEquals(5, resultado);
-    }
-
-    @Test
-    @DisplayName("Teste de falha: Deve somar 2 e 2 e esperar 5")
-    void deveFalharAoSubtrairIncorretamente() {
-        Calculadora calc = new Calculadora();
-
-        int resultado = calc.somar(2, 2);
-
-        assertEquals(5, resultado);
-    }
+//    @Test
+//    @DisplayName("Teste de falha: Deve somar 2 e 2 e esperar 5")
+//    void deveFalharAoSubtrairIncorretamente() {
+//        Calculadora calc = new Calculadora();
+//
+//        int resultado = calc.somar(2, 2);
+//
+//        assertEquals(5, resultado);
+//    }
 
     @Test
     @DisplayName("Teste para dar resultado errado, mas não falhar")
